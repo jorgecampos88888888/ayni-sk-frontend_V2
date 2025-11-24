@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variables CSS personalizadas */
+:root {
+  --primary-color: #22c55e;
+  --secondary-color: #64748b;
+  --accent-color: #ec4899;
+}
+
+[data-theme='dark'] {
+  --primary-color: #86efac;
+  --secondary-color: #cbd5e1;
+  --accent-color: #f472b6;
+}
+
+/* Estilos base globales */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+}
