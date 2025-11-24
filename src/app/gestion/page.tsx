@@ -1,37 +1,3 @@
-"use client";
-
-import React from "react";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui";
-import RequireAuth from '@/components/auth/RequireAuth';
-
-const MOCK_ITEMS = [
-  { id: "1", title: "Item 1", subtitle: "Detalle breve" },
-  { id: "2", title: "Item 2", subtitle: "Detalle breve" },
-  { id: "3", title: "Item 3", subtitle: "Detalle breve" },
-];
-
-export default function GestionPage() {
-  return (
-    <RequireAuth>
-      <main className="p-6">
-        <h1 className="text-2xl font-bold mb-4">Gestión</h1>
-
-        <div className="space-y-4">
-          {MOCK_ITEMS.map((it) => (
-            <Card key={it.id}>
-              <CardHeader>
-                <CardTitle>{it.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>{it.subtitle}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </main>
-    </RequireAuth>
-  );
-}
 'use client';
 
 import { useState } from 'react';
