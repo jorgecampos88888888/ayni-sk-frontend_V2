@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Button, Card, CardContent, CardHeader, CardTitle, Modal, Input } from '@/components/ui';
 import { Plus, Edit, Trash2, Eye } from 'lucide-react';
 import { useToggle } from '@/hooks';
+import RequireAuth from '@/components/auth/RequireAuth';
 
 interface AyniItem {
   id: string;
@@ -76,7 +77,7 @@ export default function GestionPage() {
     return styles[status as keyof typeof styles] || styles.active;
   };
 
-  return (
+  const content = (
     <div className="space-y-6">
       {/* Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -198,4 +199,6 @@ export default function GestionPage() {
       </Modal>
     </div>
   );
+
+  return <RequireAuth>{content}</RequireAuth>;
 }
